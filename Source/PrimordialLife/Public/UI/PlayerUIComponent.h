@@ -1,0 +1,32 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "UI/PawnUIComponent.h"
+#include "GameplayTagContainer.h"
+#include "PlayerUIComponent.generated.h"
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnEquippedWeaponChangedDelegate, TSoftObjectPtr<UTexture2D>, SoftWeaponIcon);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnAbilityIconSlotUpdatedDelegate, FGameplayTag, AbilityInputTag, TSoftObjectPtr<UMaterialInterface>, SoftAbilityIconMaterial);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnAbilityCooldownBeginDelegate, FGameplayTag, AbilityInputTag, float, TotalCooldownTime, float, RemainingCooldownTime);
+/**
+ * 
+ */
+UCLASS()
+class PRIMORDIALLIFE_API UPlayerUIComponent : public UPawnUIComponent
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(BlueprintAssignable)
+	FOnPercentChangDelegate OnCurrentRageChanged;
+
+	UPROPERTY(BlueprintCallable, BlueprintAssignable)
+	FOnEquippedWeaponChangedDelegate OnEquippedWeaponChanged;
+	UPROPERTY(BlueprintCallable, BlueprintAssignable)
+	FOnAbilityIconSlotUpdatedDelegate OnAbilityIconSlotUpdated;
+	UPROPERTY(BlueprintCallable, BlueprintAssignable)
+	FOnAbilityCooldownBeginDelegate OnAbilityCooldownBegin;
+};
