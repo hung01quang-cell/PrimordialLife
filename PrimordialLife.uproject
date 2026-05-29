@@ -1,0 +1,49 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.6",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "PrimordialLife",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"AIModule",
+				"UMG",
+				"EnhancedInput",
+				"GameplayAbilities"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		},
+		{
+			"Name": "StateTree",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayStateTree",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
+			"Name": "MotionWarping",
+			"Enabled": true
+		},
+		{
+			"Name": "LudusAI",
+			"Enabled": true
+		}
+	]
+}
