@@ -6,6 +6,7 @@
 #include "AbilitySystem/Abilites/PL_GameplayAbility.h"
 #include "PL_PlayerGameplayAbility.generated.h"
 
+class UPlayerUIComponent;
 class APL_PlayerCharacter;
 class APL_PlayerController;
 class UPL_PlayerCombatComponent;
@@ -27,7 +28,10 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Player|Ability")
 	UPL_PlayerCombatComponent* GetPlayerCombatComponentFromActorInfo();
-
+	
+	UFUNCTION(BlueprintPure, Category = "Player|Ability")
+	UPlayerUIComponent* GetPlayerUIComponentFromActorInfo();
+	
 	UFUNCTION(BlueprintPure, Category = "Player|Ability")
 	FGameplayEffectSpecHandle MakePlayerDamageEffectSpecHandle(TSubclassOf<UGameplayEffect> EffectClass, float InWeaponBaseDamage, 
 																FGameplayTag InCurrentAttackTypeTag, int32 InUserComboCount);

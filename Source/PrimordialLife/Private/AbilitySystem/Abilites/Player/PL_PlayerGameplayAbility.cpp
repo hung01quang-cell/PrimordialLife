@@ -34,8 +34,14 @@ UPL_PlayerCombatComponent* UPL_PlayerGameplayAbility::GetPlayerCombatComponentFr
 	return GetPlayerCharacterFromActorInfo()->GetPlayerCombatComponent();
 }
 
+UPlayerUIComponent* UPL_PlayerGameplayAbility::GetPlayerUIComponentFromActorInfo()
+{
+	return GetPlayerCharacterFromActorInfo()->GetPlayerUIComponent();
+}
+
+
 FGameplayEffectSpecHandle UPL_PlayerGameplayAbility::MakePlayerDamageEffectSpecHandle(TSubclassOf<UGameplayEffect> EffectClass, float InWeaponBaseDamage, 
-																						FGameplayTag InCurrentAttackTypeTag, int32 InUserComboCount)
+                                                                                      FGameplayTag InCurrentAttackTypeTag, int32 InUserComboCount)
 {
 	check(EffectClass);
 
@@ -71,12 +77,12 @@ bool UPL_PlayerGameplayAbility::GetAbilityRemainingCooldownByTag(FGameplayTag In
 
 	TArray< TPair <float, float> > TimeRemainingAndDuration = GetAbilitySystemComponentFromActorInfo()->GetActiveEffectsTimeRemainingAndDuration(CooldownQuery);
 
-	if (!TimeRemainingAndDuration.IsEmpty())
+	if (TimeRemainingAndDuration.IsEmpty())
 	{
-		RemainingCooldownTime = TimeRemainingAndDuration[0].Key;
-		TotalCooldownTime = TimeRemainingAndDuration[0].Value;
+		return false;
 	}
-
+	RemainingCooldownTime = TimeRemainingAndDuration[0].Key;
+	TotalCooldownTime = TimeRemainingAndDuration[0].Value;
 	return RemainingCooldownTime > 0.f;
 }
 

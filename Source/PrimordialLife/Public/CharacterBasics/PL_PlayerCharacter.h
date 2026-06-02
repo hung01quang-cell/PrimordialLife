@@ -58,13 +58,13 @@ private:
 	void Input_AbilityInputReleased(FGameplayTag InInputTag);
 
 #pragma endregion
-
-
 protected:
-
 	//~ Begin APawn Interface.k
 	virtual void PossessedBy(AController* NewController) override;
 	//~ End APawn Interface
+public:
+
+	
 
 	//~ Begin IPawnCombatInterface Interface.
 	virtual UPL_CombatComponentBase* GetPLCombatComponentBase() const override;
@@ -78,7 +78,7 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void BeginPlay() override;
 
-public:
+
 	APL_PlayerCharacter();
 
 	FORCEINLINE UPL_PlayerCombatComponent* GetPlayerCombatComponent() const { return PlayerCombatComponent; }
