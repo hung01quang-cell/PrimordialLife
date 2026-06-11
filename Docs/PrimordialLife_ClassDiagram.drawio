@@ -1,0 +1,176 @@
+<mxfile host="app.diagrams.net" modified="2026-06-09T11:03:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="PrimordialLifeClassDiagram" name="Class Diagram">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="PrimordialLife C++ Class Diagram" style="text;html=1;strokeColor=none;fillColor=none;fontSize=28;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="760" y="20" width="520" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="character_group" value="Character Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef6ff;strokeColor=#6c8ebf;fontStyle=1;fontSize=16;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="620" height="430" as="geometry"/>
+        </mxCell>
+        <mxCell id="gas_group" value="Gameplay Ability System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f0ff;strokeColor=#9673a6;fontStyle=1;fontSize=16;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="700" y="90" width="760" height="560" as="geometry"/>
+        </mxCell>
+        <mxCell id="combat_group" value="Combat / Items" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#d79b00;fontStyle=1;fontSize=16;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="570" width="740" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="ui_group" value="UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eafff2;strokeColor=#82b366;fontStyle=1;fontSize=16;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="820" y="700" width="600" height="390" as="geometry"/>
+        </mxCell>
+        <mxCell id="game_group" value="Controllers / GameMode / AI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0f0;strokeColor=#b85450;fontStyle=1;fontSize=16;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="90" width="620" height="690" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ACharacter" value="&lt;b&gt;ACharacter&lt;/b&gt;&lt;br&gt;&lt;i&gt;Unreal Engine&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="250" y="130" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="APL_CharacterBasic" value="&lt;b&gt;APL_CharacterBasic&lt;/b&gt;&lt;hr&gt;PL_AbilitySystemComponent&lt;br&gt;PL_AttributeSet&lt;br&gt;CharacterStartUpData&lt;br&gt;MotionWarpingComponent&lt;hr&gt;GetAbilitySystemComponent()&lt;br&gt;GetPLCombatComponentBase()&lt;br&gt;GetPawnUIComponent()&lt;br&gt;PossessedBy()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="170" y="220" width="330" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="APL_PlayerCharacter" value="&lt;b&gt;APL_PlayerCharacter&lt;/b&gt;&lt;hr&gt;CameraBoom / FollowCamera&lt;br&gt;PlayerCombatComponent&lt;br&gt;PlayerUIComponent&lt;br&gt;InputConfigDataAsset&lt;hr&gt;SetupPlayerInputComponent()&lt;br&gt;Input_Move() / Input_Look()&lt;br&gt;Input_AbilityInputPressed()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="410" width="280" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="APL_EnemyCharacter" value="&lt;b&gt;APL_EnemyCharacter&lt;/b&gt;&lt;hr&gt;EnemyCombatComponent&lt;br&gt;EnemyUIComponent&lt;br&gt;EnemyHealthWidgetComponent&lt;br&gt;Left/RightHandCollisionBox&lt;hr&gt;InitEnemyStartUpData()&lt;br&gt;OnBodyCollisionBoxBeginOverlap()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="410" width="280" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="interfaces" value="&lt;b&gt;Interfaces&lt;/b&gt;&lt;hr&gt;IAbilitySystemInterface&lt;br&gt;IPawnCombatInterface&lt;br&gt;IPawnUIInterface" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="230" width="150" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UPL_ASC" value="&lt;b&gt;UPL_AbilitySystemComponent&lt;/b&gt;&lt;hr&gt;OnAbilityInputPressed()&lt;br&gt;OnAbilityInputReleased()&lt;br&gt;GrantHeroWeaponAbilities()&lt;br&gt;TryActivateAbilityByTag()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="730" y="130" width="300" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="UPL_AttributeSet" value="&lt;b&gt;UPL_AttributeSet&lt;/b&gt;&lt;hr&gt;CurrentHealth / MaxHealth&lt;br&gt;CurrentRage / MaxRage&lt;br&gt;AttackPower / DefensePower&lt;br&gt;DamageTaken&lt;hr&gt;PostGameplayEffectExecute()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="130" width="300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="UPL_GameplayAbility" value="&lt;b&gt;UPL_GameplayAbility&lt;/b&gt;&lt;hr&gt;AbilityActivationPolicy&lt;hr&gt;OnGiveAbility()&lt;br&gt;EndAbility()&lt;br&gt;GetPawnCombatComponentFromActorInfo()&lt;br&gt;NativeApplyEffectSpecHandleToTarget()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="310" width="330" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="UPL_PlayerGameplayAbility" value="&lt;b&gt;UPL_PlayerGameplayAbility&lt;/b&gt;&lt;hr&gt;GetPlayerCharacterFromActorInfo()&lt;br&gt;MakePlayerDamageEffectSpecHandle()&lt;br&gt;ApplyGameplayEffectSpecHandleToHitResults()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="730" y="490" width="310" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="UPL_EnemyGameplayAbility" value="&lt;b&gt;UPL_EnemyGameplayAbility&lt;/b&gt;&lt;hr&gt;GetEnemyCharacterFromActorInfo()&lt;br&gt;GetEnemyCombatComponentFromActorInfo()&lt;br&gt;MakePlayerDamageEffectSpecHandle()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="490" width="310" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="TargetLock" value="&lt;b&gt;UPlayerGameplayAbility_TargetLock&lt;/b&gt;&lt;hr&gt;CurrentLockedActor&lt;br&gt;TryLockOnTarget()&lt;br&gt;SwitchTarget()&lt;br&gt;OnTargetLockTick()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="730" y="620" width="300" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="PickupAbility" value="&lt;b&gt;UPL_PlayerGameplayAbility_PickUpStone&lt;/b&gt;&lt;hr&gt;CollectedStones&lt;br&gt;CollectStones()&lt;br&gt;ConsumeStones()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="620" width="310" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="StartupData" value="&lt;b&gt;UDataAsset_StartUpDataBase&lt;/b&gt;&lt;hr&gt;ActivateOnGivenAbilities&lt;br&gt;ReactiveAbilities&lt;br&gt;StartUpGameplayEffect&lt;hr&gt;GiveToAbilitySystemComponent()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="730" y="290" width="240" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="PlayerStartupData" value="&lt;b&gt;UDataAsset_PlayerStartUpData&lt;/b&gt;&lt;br&gt;PlayerStartUpAbilitySets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="730" y="440" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="EnemyStartupData" value="&lt;b&gt;UDataAsset_EnemyStartUpData&lt;/b&gt;&lt;br&gt;EnemyStartUpabilitySets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="440" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="DamageExec" value="&lt;b&gt;UPL_GEExecCalc_DamageTake&lt;/b&gt;&lt;hr&gt;Execute_Implementation()&lt;br&gt;FinalDamage = BaseDamage * Attack / Defense" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="290" width="300" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="CombatBase" value="&lt;b&gt;UPL_CombatComponentBase&lt;/b&gt;&lt;hr&gt;CurrentEquippedWeaponTag&lt;br&gt;CharacterCarriedWeaponMap&lt;hr&gt;RegisterSpawnedWeapon()&lt;br&gt;ToggleWeaponCollision()&lt;br&gt;OnHitTargetActor()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="280" y="620" width="320" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="PlayerCombat" value="&lt;b&gt;UPL_PlayerCombatComponent&lt;/b&gt;&lt;hr&gt;GetPlayerCurrentEquippedWeapon()&lt;br&gt;GetPlayerCurrentEquippWeaponDamageAtLevel()&lt;br&gt;OnHitTargetActor()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="90" y="810" width="290" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="EnemyCombat" value="&lt;b&gt;UPL_EnemyCombatComponent&lt;/b&gt;&lt;hr&gt;ToggleBodyCollisionBoxCollision()&lt;br&gt;OnHitTargetActor()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="430" y="810" width="290" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="WeaponBase" value="&lt;b&gt;APL_WeaponBase&lt;/b&gt;&lt;hr&gt;WeaponMesh&lt;br&gt;WeaponCollisionBox&lt;br&gt;OnWeaponHitTarget&lt;br&gt;OnWeaponPullFromTarget&lt;hr&gt;OnCollisionBoxBeginOverlap()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="60" y="950" width="270" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="PlayerWeaponBase" value="&lt;b&gt;APL_PlayerWeaponBase&lt;/b&gt;&lt;hr&gt;PLayerWeaponData&lt;br&gt;GrantedAbilitySpecHandles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="360" y="980" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ProjectileBase" value="&lt;b&gt;APL_ProjectileBase&lt;/b&gt;&lt;hr&gt;ProjectileCollissionBox&lt;br&gt;ProjectileNiagaraComponent&lt;br&gt;ProjectileMovementComp&lt;hr&gt;OnProjectileHit()&lt;br&gt;HandleApplyProjectileDamage()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1120" width="300" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="PickupBase" value="&lt;b&gt;APL_PickUpBase&lt;/b&gt;&lt;hr&gt;PickUpCollisionSphere&lt;br&gt;OnPickUpCollisionSphereBeginOverlap()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1120" width="260" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="StoneBase" value="&lt;b&gt;APL_StoneBase&lt;/b&gt;&lt;hr&gt;StoneGameplayEffectClass&lt;br&gt;Consume()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1240" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="PawnUI" value="&lt;b&gt;UPawnUIComponent&lt;/b&gt;&lt;hr&gt;OnCurrentHealthChanged" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="750" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="PlayerUI" value="&lt;b&gt;UPlayerUIComponent&lt;/b&gt;&lt;hr&gt;OnCurrentRageChanged&lt;br&gt;OnEquippedWeaponChanged&lt;br&gt;OnAbilityCooldownBegin&lt;br&gt;OnStoneInteracted" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="840" y="880" width="270" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="EnemyUI" value="&lt;b&gt;UEnemyUIComponent&lt;/b&gt;&lt;hr&gt;EnemyDrawWidgets&lt;br&gt;RegisterEnemyDrawWidget()&lt;br&gt;RemoveEnemyDrawWidgetsIfAny()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="880" width="270" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="PlayerWidget" value="&lt;b&gt;UPlayerWidgetBase&lt;/b&gt;&lt;hr&gt;NativeOnInitialized()&lt;br&gt;InitEnemyCreateWidget()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1030" width="270" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="PlayerController" value="&lt;b&gt;APL_PlayerController&lt;/b&gt;&lt;hr&gt;PlayerTeamID&lt;br&gt;GetGenericTeamId()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="140" width="250" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="AIController" value="&lt;b&gt;APL_AIController&lt;/b&gt;&lt;hr&gt;EnemyPerceptionComponent&lt;br&gt;AISenseConfig_Sight&lt;hr&gt;GetTeamAttitudeTowards()&lt;br&gt;OnEnemyPerceptionUpdated()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1830" y="140" width="270" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="GameModeBase" value="&lt;b&gt;APL_GameModeBase&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1610" y="350" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="SurvivalGameMode" value="&lt;b&gt;APL_SurvialGameMode&lt;/b&gt;&lt;hr&gt;CurrentSurvialGameModeState&lt;br&gt;EnemyWaveSpawnerDataTable&lt;br&gt;TotalWavesToSpawn&lt;br&gt;CurrentWaveCount&lt;hr&gt;Tick()&lt;br&gt;SetCurrentSurvialGameModeState()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="450" width="310" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="InputConfig" value="&lt;b&gt;UDataAsset_InputConfig&lt;/b&gt;&lt;hr&gt;DefaultMappingContext&lt;br&gt;NativeInputConfig&lt;br&gt;AbilityInputActions&lt;hr&gt;FindNativeInputActionByTag()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="640" width="310" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="FunctionLibrary" value="&lt;b&gt;UPL_FunctionLibrary&lt;/b&gt;&lt;hr&gt;NativeGetPrimordialLifeASCFromActor()&lt;br&gt;IsTargetPawnHostile()&lt;br&gt;ComputeHitReactDirectionTag()&lt;br&gt;IsValidBlock()&lt;br&gt;ApplyGameplayEffectSpecHandleToTargetActor()&lt;br&gt;CountDown()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="450" width="290" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_char_base" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="APL_CharacterBasic" target="ACharacter"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_player_char" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="APL_PlayerCharacter" target="APL_CharacterBasic"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_enemy_char" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="APL_EnemyCharacter" target="APL_CharacterBasic"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_interfaces" value="implements" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="APL_CharacterBasic" target="interfaces"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_char_asc" value="owns" style="endArrow=diamond;endFill=1;html=1;rounded=0;" edge="1" parent="1" source="APL_CharacterBasic" target="UPL_ASC"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_char_attr" value="owns" style="endArrow=diamond;endFill=1;html=1;rounded=0;" edge="1" parent="1" source="APL_CharacterBasic" target="UPL_AttributeSet"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e_ability_player" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="UPL_PlayerGameplayAbility" target="UPL_GameplayAbility"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_ability_enemy" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="UPL_EnemyGameplayAbility" target="UPL_GameplayAbility"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_targetlock" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="TargetLock" target="UPL_PlayerGameplayAbility"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_pickupability" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="PickupAbility" target="UPL_PlayerGameplayAbility"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_data_player" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="PlayerStartupData" target="StartupData"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_data_enemy" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="EnemyStartupData" target="StartupData"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_startup_grants" value="grants abilities/effects" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="StartupData" target="UPL_ASC"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_damage_attr" value="writes DamageTaken" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="DamageExec" target="UPL_AttributeSet"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e_combat_player" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="PlayerCombat" target="CombatBase"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_combat_enemy" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="EnemyCombat" target="CombatBase"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_player_owns_combat" value="owns" style="endArrow=diamond;endFill=1;html=1;rounded=0;" edge="1" parent="1" source="APL_PlayerCharacter" target="PlayerCombat"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_enemy_owns_combat" value="owns" style="endArrow=diamond;endFill=1;html=1;rounded=0;" edge="1" parent="1" source="APL_EnemyCharacter" target="EnemyCombat"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_combat_weapon" value="registers/uses" style="endArrow=open;html=1;rounded=0;" edge="1" parent="1" source="CombatBase" target="WeaponBase"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_player_weapon" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="PlayerWeaponBase" target="WeaponBase"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_stone" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="StoneBase" target="PickupBase"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_projectile_damage" value="applies effect" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="ProjectileBase" target="FunctionLibrary"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_stone_asc" value="ApplyGameplayEffectToSelf" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="StoneBase" target="UPL_ASC"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e_ui_player" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="PlayerUI" target="PawnUI"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_ui_enemy" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="EnemyUI" target="PawnUI"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_player_owns_ui" value="owns" style="endArrow=diamond;endFill=1;html=1;rounded=0;" edge="1" parent="1" source="APL_PlayerCharacter" target="PlayerUI"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_enemy_owns_ui" value="owns" style="endArrow=diamond;endFill=1;html=1;rounded=0;" edge="1" parent="1" source="APL_EnemyCharacter" target="EnemyUI"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_attr_ui" value="broadcast health/rage" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="UPL_AttributeSet" target="PawnUI"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_widget_ui" value="binds delegates" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="PlayerWidget" target="PawnUI"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e_gm_survival" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="SurvivalGameMode" target="GameModeBase"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_input_player" value="input config" style="endArrow=open;html=1;rounded=0;" edge="1" parent="1" source="APL_PlayerCharacter" target="InputConfig"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_player_controller" value="possesses" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="PlayerController" target="APL_PlayerCharacter"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_ai_controller" value="possesses/perceives" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="AIController" target="APL_EnemyCharacter"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_func_teams" value="team/block helpers" style="endArrow=open;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="FunctionLibrary" target="APL_CharacterBasic"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

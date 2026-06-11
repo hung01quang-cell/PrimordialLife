@@ -6,6 +6,7 @@
 #include "PrimordialLifeType/PL_EnumType.h"
 #include "PL_FunctionLibrary.generated.h"
 
+class UPL_GameInstance;
 class UPL_AbilitySystemComponent;
 class UPL_CombatComponentBase;
 /**
@@ -52,4 +53,16 @@ public:
 		float& OutRemainingTime, E_PrimordialLifeCountDownActionInput CountDownInput,
 		UPARAM(DisplayName = "Output") E_PrimordialLifeCountDownActionOutput& CountDownOutput, FLatentActionInfo LatentInfo);
 
+	UFUNCTION(BlueprintPure, Category = "Player|FunctionLibrary", meta = (WorldContext = "WorldContextObject"))
+	static UPL_GameInstance* GetPLayerGameInstance(const UObject* WorldContextObject);
+	
+	UFUNCTION(BlueprintCallable,Category = "Player|FunctionLibrary", meta = (WorldContext = "WorldContextObject"))
+	static void ToggleInputMode(const UObject* WorldContextObject,E_PrimordialLifeInputMode InInputMode);
+	
+	UFUNCTION(BlueprintCallable,Category = "Player|FunctionLibrary")
+	static void SaveCurrentGameDifficulty(E_PrimordialLifeGameDifficulty InDifficultyToSave);
+
+	UFUNCTION(BlueprintCallable,Category = "Player|FunctionLibrary")
+	static bool TryLoadSavedGameDifficulty(E_PrimordialLifeGameDifficulty& OutSavedDifficulty);
+	
 };

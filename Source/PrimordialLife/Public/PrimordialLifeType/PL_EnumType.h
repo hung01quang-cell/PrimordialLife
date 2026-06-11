@@ -37,3 +37,19 @@ enum class E_PrimordialLifeCountDownActionOutput : uint8
 	Completed,
 	Cancelled
 };
+
+UENUM(BlueprintType)
+enum class E_PrimordialLifeGameDifficulty : uint8
+{
+	Easy,
+	Normal,
+	Hard,
+	VeryHard
+};
+
+UENUM(BlueprintType)
+enum class E_PrimordialLifeInputMode : uint8
+{
+	GameOnly,
+	UIOnly
+};

@@ -2,7 +2,6 @@
 
 
 #include "AbilitySystem/Abilites/Enemy/PL_EnemyGameplayAbility.h"
-#include "Combat/Components/Enemy/PL_EnemyCombatComponent.h"
 #include "CharacterBasics/PL_EnemyCharacter.h"
 #include "AbilitySystem/Components/PL_AbilitySystemComponent.h"
 #include "PL_GameplayTags.h"

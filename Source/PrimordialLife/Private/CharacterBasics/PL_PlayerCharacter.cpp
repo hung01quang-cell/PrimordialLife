@@ -7,7 +7,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/Controller.h"
-#include "EnhancedInputComponent.h"
+#include  "GameModes/PL_GameModeBase.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "Input/DataAsset/DataAsset_InputConfig.h"
@@ -55,8 +55,39 @@ void APL_PlayerCharacter::PossessedBy(AController* NewController)
 	{
 		if (UDataAsset_StartUpDataBase* LoadedData = CharacterStartUpData.LoadSynchronous())
 		{
-			LoadedData->GiveToAbilitySystemComponent(PL_AbilitySystemComponent);
+			int32 AbilityApplyLevel = 1;
+
+			if (APL_GameModeBase* BaseGameMode = GetWorld()->GetAuthGameMode<APL_GameModeBase>())
+			{
+				switch (BaseGameMode->GetCurrentGameDifficulty())
+				{
+				case E_PrimordialLifeGameDifficulty::Easy:
+					AbilityApplyLevel = 4;
+					Debug::Print(TEXT("Current Difficulty: Easy"));
+					break;
+
+				case E_PrimordialLifeGameDifficulty::Normal:
+					AbilityApplyLevel = 3;
+					Debug::Print(TEXT("Current Difficulty: Normal"));
+					break;
+
+				case E_PrimordialLifeGameDifficulty::Hard:
+					AbilityApplyLevel = 2;
+					Debug::Print(TEXT("Current Difficulty: Hard"));
+					break;
+
+				case E_PrimordialLifeGameDifficulty::VeryHard:
+					AbilityApplyLevel = 1;
+					Debug::Print(TEXT("Current Difficulty: Very Hard"));
+					break;
+
+				default:
+					break;
+				}
+			}
+			LoadedData->GiveToAbilitySystemComponent(PL_AbilitySystemComponent,AbilityApplyLevel);
 		}
+		
 	}
 }
 

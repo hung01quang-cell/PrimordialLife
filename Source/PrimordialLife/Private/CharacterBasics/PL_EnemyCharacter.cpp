@@ -11,6 +11,7 @@
 #include "Widgets/PlayerWidgetBase.h"
 #include "Components/BoxComponent.h"
 #include "PL_FunctionLibrary.h"
+#include "GameModes/PL_GameModeBase.h"
 
 #include "PL_DebugHelper.h"
 
@@ -106,14 +107,40 @@ void APL_EnemyCharacter::InitEnemyStartUpData()
 {
 	if (CharacterStartUpData.IsNull()) return;
 
+	int32 AbilityApplyLevel = 1;
+
+	if (APL_GameModeBase* BaseGameMode = GetWorld()->GetAuthGameMode<APL_GameModeBase>())
+	{
+		switch (BaseGameMode->GetCurrentGameDifficulty())
+		{
+		case E_PrimordialLifeGameDifficulty::Easy:
+			AbilityApplyLevel = 1;
+			break;
+
+		case E_PrimordialLifeGameDifficulty::Normal:
+			AbilityApplyLevel = 2;
+			break;
+
+		case E_PrimordialLifeGameDifficulty::Hard:
+			AbilityApplyLevel = 3;
+			break;
+
+		case E_PrimordialLifeGameDifficulty::VeryHard:
+			AbilityApplyLevel = 4;
+			break;
+
+		default:
+			break;
+		}
+	}
 	UAssetManager::GetStreamableManager().RequestAsyncLoad(
 		CharacterStartUpData.ToSoftObjectPath(),
 		FStreamableDelegate::CreateLambda(
-			[this]()
+			[this, AbilityApplyLevel]()
 			{
 				if (UDataAsset_StartUpDataBase* LoadedData = CharacterStartUpData.Get())
 				{
-					LoadedData->GiveToAbilitySystemComponent(PL_AbilitySystemComponent);
+					LoadedData->GiveToAbilitySystemComponent(PL_AbilitySystemComponent, AbilityApplyLevel);
 				}
 			}
 		)
